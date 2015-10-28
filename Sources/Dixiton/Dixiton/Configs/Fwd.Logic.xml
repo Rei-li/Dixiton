@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         >
+
+  <!--Command dispatcher-->
+  <object id="CommandQueryDispatcher" type="Dixiton.Logic.CommandQueryDispatcher, Dixiton.Logic"
+          singleton="true" autowire="autodetect" >
+    <constructor-arg name="sessionManager" ref="ISessionManager" />
+  </object>
+
+  <object id="BloBase" type="Dixiton.Logic.Blos.BloBase, Dixiton.Logic" abstract="true" autowire="autodetect" init-method="RegisterCommands" >
+    <constructor-arg name="validationManager" ref="ValidationManager" />
+    <property name="CommandQueryRegistrator" ref="CommandQueryDispatcher" />
+  </object>
+
+  
+  
+  <object id="ValidationManager" type="Dixiton.Logic.Validation.ValidationManager, Dixiton.Logic" singleton="true" autowire="autodetect" />
+
+
+  
+</objects>

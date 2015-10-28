@@ -13,6 +13,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Dtos", "Dixiton.Dto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.DataAccess", "Dixiton.DataAccess\Dixiton.DataAccess.csproj", "{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{DC78773A-A801-49EC-B909-4FF0F422845B}"
+	ProjectSection(SolutionItems) = preProject
+		Configs\Fwd.Dao.xml = Configs\Fwd.Dao.xml
+		Configs\Fwd.Immutable.xml = Configs\Fwd.Immutable.xml
+		Configs\Fwd.Logic.xml = Configs\Fwd.Logic.xml
+		Configs\Fwd.Tests.xml = Configs\Fwd.Tests.xml
+		Configs\Fwd.Web.xml = Configs\Fwd.Web.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +50,10 @@ Global
 		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

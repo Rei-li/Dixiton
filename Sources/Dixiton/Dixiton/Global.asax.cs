@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spring.Web.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,7 @@ using System.Web.Routing;
 
 namespace Dixiton
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : SpringMvcApplication
     {
         protected void Application_Start()
         {

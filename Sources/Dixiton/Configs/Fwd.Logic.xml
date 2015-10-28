@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         >
+
+  <!--Command dispatcher-->
+  <object id="CommandQueryDispatcher" type="Dixiton.Logic.CommandQueryDispatcher, Dixiton.Logic"
+          singleton="true" autowire="autodetect" >
+    <constructor-arg name="sessionManager" ref="ISessionManager" />
+  </object>
+
+  <object id="BloBase" type="Dixiton.Logic.Blos.BloBase, Dixiton.Logic" abstract="true" autowire="autodetect" init-method="RegisterCommands" >
+    <constructor-arg name="validationManager" ref="ValidationManager" />
+    <property name="CommandQueryRegistrator" ref="CommandQueryDispatcher" />
+  </object>
+
+  <object id="EmployeeBlo" type="Dixiton.Logic.Blos.EmployeeBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase" >
+      <property name="EmployeeDao" ref="EmployeeDao" />
+      <property name="ActivityDao" ref="ActivityDao" />
+  </object>
+
+
+  <object id="ReportExcelBlo" type="Dixiton.Logic.Blos.ReportExcelBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase" >
+    <property name="resourceProvider" ref="IResourceProvider"/>
+    <property name="ActivityDao" ref="ActivityDao" />
+    <property name="PeriodBlo" ref="PeriodBlo" />
+    <property name="EmployeeDao" ref="EmployeeDao" />
+    <property name="ProjectDao" ref="ProjectDao" />
+    <property name="ContextInformer" ref="IContextInformer" />
+    <property name="MonthlyWorkloadReportTemplatePath" value="${report.templates.monthly-workload}" />
+  </object>
+
+  <object id="PeriodBlo" type="Dixiton.Logic.Blos.PeriodBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="PeriodDao" ref="PeriodDao" />
+    <property name="WorkHours" value="date(${common.templates.workhours})"/>
+   </object>
+  
+  <object id="ProjectRoleBlo" type="Dixiton.Logic.Blos.ProjectRoleBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="ProjectRoleDao" ref="ProjectRoleDao" />
+  </object>
+
+  <object id="ProjectBlo" type="Dixiton.Logic.Blos.ProjectBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="ProjectDao" ref="ProjectDao" />
+  </object>
+
+  <object id="ValidatorBase" type="Dixiton.Logic.Validation.ValidatorBase, Dixiton.Logic" abstract="true" autowire="autodetect"/>
+  
+  <object id="ActivityValidator" type="Dixiton.Logic.Validation.ActivityValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="MinDate" value="${common.templates.mindate}" />
+    <property name="ProjectDao" ref="ProjectDao" />
+    <property name="EmployeeDao" ref="EmployeeDao" />
+  </object>
+
+  <object id="CustomerValidator" type="Dixiton.Logic.Validation.CustomerValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="CustomerDao" ref="CustomerDao" />
+  </object>
+
+  <object id="EmployeeValidator" type="Dixiton.Logic.Validation.EmployeeValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="EmployeeDao" ref="EmployeeDao" />
+    </object>
+
+  <object id="ProjectValidator" type="Dixiton.Logic.Validation.ProjectValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="ProjectDao" ref="ProjectDao" />
+    </object>
+
+  <object id="ProjectRoleValidator" type="Dixiton.Logic.Validation.ProjectRoleValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="ProjectRoleDao" ref="ProjectRoleDao" />
+  </object>
+
+  <object id="EmployeeMonthlyInfoValidator" type="Dixiton.Logic.Validation.EmployeeMonthlyInfoValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="MinDate" value="${common.templates.mindate}" />
+    <property name="EmployeeMonthlyInfoDao" ref="EmployeeMonthlyInfoDao" />
+    <property name="EmployeeDao" ref="EmployeeDao" />
+  </object>
+
+  <object id="PeriodValidator" type="Dixiton.Logic.Validation.PeriodValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="MinDate" value="${common.templates.mindate}" />
+    <property name="PeriodDao" ref="PeriodDao" />
+  </object>
+
+  <object id="DepartmentValidator" type="Dixiton.Logic.Validation.DepartmentValidator, Dixiton.Logic" singleton="true" autowire="autodetect" parent="ValidatorBase">
+    <property name="DepartmentDao" ref="DepartmentDao" />
+  </object>
+  
+  <object id="ValidationManager" type="Dixiton.Logic.Validation.ValidationManager, Dixiton.Logic" singleton="true" autowire="autodetect" />
+
+  <object id="ActivityBlo" type="Dixiton.Logic.Blos.ActivityBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <constructor-arg name="resourceProvider" ref="IResourceProvider"/>
+    <property name="MinDate" value="${common.templates.mindate}" />
+    <property name="ActivityDao" ref="ActivityDao" />
+    <property name="ProjectDao" ref="ProjectDao" />
+    <property name="EmployeeDao" ref="EmployeeDao" />
+    <property name="EmployeeMonthlyInfoDao" ref="EmployeeMonthlyInfoDao" />
+    <property name="ProjectBlo" ref="ProjectBlo" />
+    <property name="EmployeeBlo" ref="EmployeeBlo" />
+    <property name="ContextInformer" ref="IContextInformer" />
+  </object>
+
+
+  <object id="CustomerBlo" type="Dixiton.Logic.Blos.CustomerBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="CustomerDao" ref="CustomerDao" />
+  </object>
+
+  <object id="EmployeeMonthlyInfoBlo" type="Dixiton.Logic.Blos.EmployeeMonthlyInfoBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="EmployeeMonthlyInfoDao" ref="EmployeeMonthlyInfoDao" />
+    <property name="EmployeeDao" ref="EmployeeDao" />
+    <property name="ActivityDao" ref="ActivityDao" />
+    <property name="PeriodDao" ref="PeriodDao" />
+    </object>
+
+  <object id="DepartmentBlo" type="Dixiton.Logic.Blos.DepartmentBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="DepartmentDao" ref="DepartmentDao" />
+  </object>
+
+  <object id="Report_EstimationAnalysisBlo" type="Dixiton.Logic.Blos.Report_EstimationAnalysisBlo, Dixiton.Logic" singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="Report_EstimationAnalysisDao" ref="Report_EstimationAnalysisDao" />
+    <property name="ProjectDao" ref="ProjectDao" />
+    <property name="ActivityDao" ref="ActivityDao" />
+    <property name="ProjectRoleDao" ref="ProjectRoleDao" />
+  </object>
+
+  <object id="Report_FinancialAnalysisBlo" type="Dixiton.Logic.Blos.Report_FinancialAnalysisBlo, Dixiton.Logic" 
+          singleton="true" autowire="autodetect" parent="BloBase">
+    <property name="Report_FinancialAnalysisDao" ref="Report_FinancialAnalysisDao" />
+    <property name="ActivityDao" ref="ActivityDao" />
+  </object>
+  
+</objects>

@@ -30,7 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\References\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\References\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\..\..\References\Spring.Core.2.0.0-M2\lib\net40\Spring.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,10 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Blos\BloBase.cs" />
+    <Compile Include="CommandQueryDispatcher.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="EnumeratedErrors.cs" />
+    <Compile Include="ExecutionResult.cs" />
+    <Compile Include="ICommandQueryDispatcher.cs" />
+    <Compile Include="ICommandQueryRegistrator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\QueryBase.cs" />
+    <Compile Include="Validation\ValidationManager.cs" />
+    <Compile Include="Validation\ValidatorBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{9fa6ff57-6deb-4a7d-8278-60631e4d9830}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dixiton.DataAccess\Dixiton.DataAccess.csproj">
       <Project>{5c34a4ed-9a71-48a9-a5ca-efe71395f5f0}</Project>
       <Name>Dixiton.DataAccess</Name>
