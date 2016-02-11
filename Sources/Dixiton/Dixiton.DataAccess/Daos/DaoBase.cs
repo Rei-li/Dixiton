@@ -29,12 +29,12 @@ namespace Dixiton.DataAccess.Daos
         ///Save entity
         /// </summary>
         /// <returns></returns>
-        protected int Save<TDto, TEntity>(TDto dto)
+        protected string Save<TDto, TEntity>(TDto dto)
             where TDto : EntityDtoBase
             where TEntity : EntityBase
         {
             TEntity entity = Mapper.Map<TDto, TEntity>(dto);
-            SessionManager.CurrentSession.SaveOrUpdate(entity);
+            SessionManager.CurrentSession.Save(entity);
             SessionManager.CurrentSession.Flush();
             return entity.Id;
         }
@@ -50,7 +50,7 @@ namespace Dixiton.DataAccess.Daos
             foreach (var dto in dtos)
             {
                 TEntity entity = Mapper.Map<TDto, TEntity>(dto);
-                SessionManager.CurrentSession.SaveOrUpdate(entity);
+                SessionManager.CurrentSession.Save(entity);
             }
             SessionManager.CurrentSession.Flush();
         }
@@ -58,7 +58,7 @@ namespace Dixiton.DataAccess.Daos
         /// <summary>
         /// Save entity
         /// </summary>
-        protected int Save<TDto, TEntity>(TDto dto, int id)
+        protected string Save<TDto, TEntity>(TDto dto, Guid id)
             where TDto : EntityDtoBase
             where TEntity : EntityBase
         {
@@ -72,7 +72,6 @@ namespace Dixiton.DataAccess.Daos
         ///Delete entity
         /// </summary>
         /// <returns></returns>
-        /// TODO: CR: SAS-FIX: It shouldn't be a public method
         protected void Delete<TEntity>(int id, int version)
             where TEntity : EntityBase
         {
@@ -92,7 +91,6 @@ namespace Dixiton.DataAccess.Daos
         ///Check is exist entity in bd
         /// </summary>
         /// <returns></returns>
-        /// /// TODO: CR: SAS-FIX: It shouldn't be a public method
         protected bool IsExist<T>(Expression<Func<T, bool>> func)
             where T : EntityBase
         {
@@ -108,7 +106,6 @@ namespace Dixiton.DataAccess.Daos
         ///// <typeparam name="TEntity"> type of entities selected in query</typeparam>
         ///// <param name="valuePropertyName">name of property for value in LookupDto </param>
         ///// <returns></returns>
-        ///// /// TODO: CR: NSO-FIX: It shouldn't be a public method
         //protected IQueryOver<TEntity, TEntity> GetLookupQueryOver<TEntity>(string valuePropertyName)
         //    where TEntity : EntityBase
         //{
@@ -126,8 +123,6 @@ namespace Dixiton.DataAccess.Daos
         ///// <param name="queryOver">Lookup query</param>
         ///// <param name="onlyUniqueValues"></param>
         ///// <returns></returns>
-        ///// /// TODO: CR: NSO-FIX: It shouldn't be a public method
-        ///// TODO: CR: NSO-FIX: Resalt->Result
         //protected List<LookupDto> LookupQueryResultTransform<TEntity>(IQueryOver<TEntity, TEntity> queryOver,
         //    bool onlyUniqueValues = false)
         //{

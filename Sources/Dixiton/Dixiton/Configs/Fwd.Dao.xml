@@ -4,7 +4,7 @@
          >
 
   <object id="DaoBase" type="Dixiton.DataAccess.Daos.DaoBase, Dixiton.DataAccess" abstract="true" autowire="autodetect" />
-
+  <object id="UserDao" type="Dixiton.DataAccess.Daos.UserDao, Dixiton.DataAccess" parent="DaoBase" singleton="true" autowire="autodetect" />
 
   
 </objects>

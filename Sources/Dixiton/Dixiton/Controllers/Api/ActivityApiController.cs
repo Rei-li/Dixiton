@@ -1,19 +1,15 @@
-﻿using System.Collections.Generic;
-//using AutoMapper;
+﻿using System;
+using System.Web.Http;
 using Common.Logging;
-using Dixiton.Dtos;
-//using Dixiton.Dtos.Enums;
 using Dixiton.Logic;
-using Dixiton.Logic.Commands;
-using Dixiton.Logic.Queries;
+//using AutoMapper;
+//using Dixiton.Dtos.Enums;
 //using Dixiton.Web.Attributes.ActionFilters;
 //using Dixiton.Web.Models;
-using System;
-using System.Linq;
-using System.Web.Http;
+
 //using Resources;
 
-namespace Dixiton.Web.Controllers.Api
+namespace Dixiton.Controllers.Api
 {
     /// <summary>
     /// Web API implementation for Activity (using Web API 2)
@@ -43,35 +39,35 @@ namespace Dixiton.Web.Controllers.Api
 
         //// GET api/<controller>
         ///// <summary>
-        ///// Get all activities with filter (projectId, dateFrom, dateTo, activityTypes)
+        ///// Get all activities with filter (UserId, dateFrom, dateTo, activityTypes)
         ///// </summary>
         ///// <returns></returns>
         //[Route("")]
-        //public IHttpActionResult Get(int projectId = 0, DateTime? dateFrom = null, DateTime? dateTo = null, [FromUri]int[] activityTypes = null)
+        //public IHttpActionResult Get(int UserId = 0, DateTime? dateFrom = null, DateTime? dateTo = null, [FromUri]int[] activityTypes = null)
         //{
         //    if (activityTypes == null || activityTypes.Length == 0)
         //    {
         //        activityTypes = new[]
         //        {
         //            (int)ActivityType.Undefined,
-        //            (int)ActivityType.TransferBetweenProjectsGet,
-        //            (int)ActivityType.TransferBetweenProjectsPut,
+        //            (int)ActivityType.TransferBetweenUsersGet,
+        //            (int)ActivityType.TransferBetweenUsersPut,
         //            (int)ActivityType.Workload,
         //            (int)ActivityType.Bonus,
         //            (int)ActivityType.Income,
-        //            (int)ActivityType.ProjectPayments,
+        //            (int)ActivityType.UserPayments,
         //            (int)ActivityType.Overworks
         //        };
         //    }
-        //    var query = new GetActivitiesForProjectQuery
+        //    var query = new GetActivitiesForUserQuery
         //    {
         //        Types = activityTypes.ToList(),
-        //        ProjectId = projectId,
+        //        UserId = UserId,
         //        DateFrom = dateFrom,
         //        DateTo = dateTo
         //    };
 
-        //    var dto = (ProjectActivitiesReportDto)CommandQueryDispatcher.ExecuteQuery(query).Data;
+        //    var dto = (UserActivitiesReportDto)CommandQueryDispatcher.ExecuteQuery(query).Data;
 
         //    return Ok(dto);
         //}
@@ -96,17 +92,17 @@ namespace Dixiton.Web.Controllers.Api
         //}
 
 
-        //// GET api/<controller>/ByProject/5
+        //// GET api/<controller>/ByUser/5
         ///// <summary>
-        ///// Get all Activities by Project Id
+        ///// Get all Activities by User Id
         ///// </summary>
-        ///// <param name="projectId"></param>
+        ///// <param name="UserId"></param>
         ///// <returns></returns>
-        //[Route("~/api/projects/{projectId}/activities")]
+        //[Route("~/api/Users/{UserId}/activities")]
         //[HttpGet]
-        //public IHttpActionResult GetActivitiesByProject(int projectId)
+        //public IHttpActionResult GetActivitiesByUser(int UserId)
         //{
-        //    return Get(projectId, null); // call Get all activities with filter (projectId, dateFrom, dateTo, activityTypes)
+        //    return Get(UserId, null); // call Get all activities with filter (UserId, dateFrom, dateTo, activityTypes)
         //}
 
         //// POST api/<controller>
@@ -189,17 +185,17 @@ namespace Dixiton.Web.Controllers.Api
 
 
         ///// <summary>
-        ///// Get messages for all incorect points sum per month by Project Id
+        ///// Get messages for all incorect points sum per month by User Id
         ///// </summary>
-        ///// <param name="projectId"></param>
+        ///// <param name="UserId"></param>
         ///// <returns></returns>
-        //[Route("~/api/projects/{projectId}/incorrectMonthPointsSumNotification")]
+        //[Route("~/api/Users/{UserId}/incorrectMonthPointsSumNotification")]
         //[HttpGet]
-        //public IHttpActionResult GetIncorrectMonthPointsSumNotification(int projectId)
+        //public IHttpActionResult GetIncorrectMonthPointsSumNotification(int UserId)
         //{
         //    var result = new List<NotificationModel>();
 
-        //    var incorrectMonthsQuery = new GetIncorrectMonthsPointsSumQuery(projectId);
+        //    var incorrectMonthsQuery = new GetIncorrectMonthsPointsSumQuery(UserId);
         //    ExecutionResult resultIncorrectMonths = CommandQueryDispatcher.ExecuteQuery(incorrectMonthsQuery);
         //    var months = (IList<MonthPointsSumDto>)resultIncorrectMonths.Data;
         //    if (months != null && months.Count > 0)

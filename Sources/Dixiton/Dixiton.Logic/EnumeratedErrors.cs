@@ -6,7 +6,7 @@
 
         public const string MINDATE = "MinDateMsg";
 
-        public const string PROJECTNOTEXIST = "ProjectNotExist";
+        public const string UserNOTEXIST = "UserNotExist";
 
         public const string EMPLOYEENOTEXIST = "EmployeeNotExist";
 
@@ -14,13 +14,13 @@
 
         public const string EMPLOYEEMONTHLYINFOEMPTYSALARY = "EmployeeMonthlyInfoEmptySalary";
 
-        public const string PROJECTEXIST = "ProjectAlreadyExist";
+        public const string UserEXIST = "UserAlreadyExist";
 
         public const string EMPLOYEEEXIST = "EmployeeExist";
 
         public const string PERIODEXIST = "PeriodExist";
 
-        public const string PROJECTROLEEXIST = "ProjectRoleExists";
+        public const string UserROLEEXIST = "UserRoleExists";
 
         public const string DEPARTMENTNAMEEXIST = "DepartmentNameExists";
 
@@ -42,7 +42,7 @@
 
         public const string CANTDELETE = "CantDelete";
 
-        public const string USED_AT_PROJECTS = "UsedAtProjects";
+        public const string USED_AT_UserS = "UsedAtUsers";
 
         public const string INCORRECT_VALUE = "IncorrectValue";
 
@@ -50,7 +50,7 @@
 
         public const string EMPLOYEEMONTHLYCOPYFILLED = "EmployeeMonthlyCopyFilled";
 
-        public const string PROJECTSHOULDBEDIFF = "ProjectsShouldBeDifferent";
+        public const string UserSHOULDBEDIFF = "UsersShouldBeDifferent";
 
         public const string EMPLOYEE_FIRED = "EmployeeFired";
 

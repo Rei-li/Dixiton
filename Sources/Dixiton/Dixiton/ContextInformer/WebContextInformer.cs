@@ -3,7 +3,7 @@ using System.IO;
 using System.Web;
 using Dixiton.Common.Interfaces;
 
-namespace Dixiton.Web.ContextInformer
+namespace Dixiton.ContextInformer
 {
     /// <summary>
     /// Web environment context

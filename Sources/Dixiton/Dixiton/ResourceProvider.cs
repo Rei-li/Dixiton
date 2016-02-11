@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Resources;
 using Dixiton.Common.Interfaces;
 
-namespace Dixiton.Web
+namespace Dixiton
 {
-    public class ResourceProvider : Dixiton.Common.Interfaces.IResourceProvider
+    public class ResourceProvider : IResourceProvider
     {
         private const string RESOURCE_ASSEMBLY = "App_GlobalResources";
 

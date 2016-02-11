@@ -1,4 +1,5 @@
-﻿using NHibernate.Validator.Constraints;
+﻿using System;
+using NHibernate.Validator.Constraints;
 
 namespace Dixiton.DataAccess.Entities
 {
@@ -7,6 +8,6 @@ namespace Dixiton.DataAccess.Entities
         /// <summary>
         /// 	Identifier of an entity
         /// </summary>
-        public virtual int Id { get; set; }
+        public virtual String Id { get; set; }
     }
 }

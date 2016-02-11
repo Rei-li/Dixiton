@@ -3,26 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Web", "Dixiton\Dixiton.Web.csproj", "{EC63D789-3B31-438E-89AE-5A57CD3513CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton", "Dixiton\Dixiton.csproj", "{4349D04F-3AF4-4D8D-9465-EDD1B7D35378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Tests", "Dixiton.Tests\Dixiton.Tests.csproj", "{8221988B-EA9B-429A-9EFE-DAAB75C15459}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Logic", "Dixiton.Logic\Dixiton.Logic.csproj", "{B374F659-86FA-4F01-88A8-3F06E80C46A1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Dtos", "Dixiton.Dtos\Dixiton.Dtos.csproj", "{B56B3CD8-F916-43EC-B8F4-74F413F54300}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.DataAccess", "Dixiton.DataAccess\Dixiton.DataAccess.csproj", "{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{DC78773A-A801-49EC-B909-4FF0F422845B}"
-	ProjectSection(SolutionItems) = preProject
-		Configs\Fwd.Dao.xml = Configs\Fwd.Dao.xml
-		Configs\Fwd.Immutable.xml = Configs\Fwd.Immutable.xml
-		Configs\Fwd.Logic.xml = Configs\Fwd.Logic.xml
-		Configs\Fwd.Tests.xml = Configs\Fwd.Tests.xml
-		Configs\Fwd.Web.xml = Configs\Fwd.Web.xml
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Dtos", "Dixiton.Dtos\Dixiton.Dtos.csproj", "{B56B3CD8-F916-43EC-B8F4-74F413F54300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Logic", "Dixiton.Logic\Dixiton.Logic.csproj", "{B374F659-86FA-4F01-88A8-3F06E80C46A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dixiton.Tests", "Dixiton.Tests\Dixiton.Tests.csproj", "{8221988B-EA9B-429A-9EFE-DAAB75C15459}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,30 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC63D789-3B31-438E-89AE-5A57CD3513CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC63D789-3B31-438E-89AE-5A57CD3513CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC63D789-3B31-438E-89AE-5A57CD3513CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC63D789-3B31-438E-89AE-5A57CD3513CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4349D04F-3AF4-4D8D-9465-EDD1B7D35378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4349D04F-3AF4-4D8D-9465-EDD1B7D35378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4349D04F-3AF4-4D8D-9465-EDD1B7D35378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4349D04F-3AF4-4D8D-9465-EDD1B7D35378}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA6FF57-6DEB-4A7D-8278-60631E4D9830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C34A4ED-9A71-48A9-A5CA-EFE71395F5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56B3CD8-F916-43EC-B8F4-74F413F54300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B374F659-86FA-4F01-88A8-3F06E80C46A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8221988B-EA9B-429A-9EFE-DAAB75C15459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

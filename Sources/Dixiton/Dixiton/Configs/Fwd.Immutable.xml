@@ -16,6 +16,6 @@
   <object id="ISessionManager" type="Dixiton.DataAccess.NHibernate.SessionManager, Dixiton.DataAccess" singleton="true" autowire="autodetect" />
   
   <!--Automapper configs-->
-  <!--<object id="EntityDtoMappings" type="Dixiton.DataAccess.AutomapperMappings.EntityDtoMappings, Dixiton.DataAccess" singleton="true"/>-->
+  <object id="EntityDtoMappings" type="Dixiton.DataAccess.AutomapperMappings.EntityDtoMappings, Dixiton.DataAccess" singleton="true"/>
   
 </objects>

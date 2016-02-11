@@ -42,6 +42,10 @@
     <Reference Include="FluentNHibernate">
       <HintPath>..\..\..\References\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\..\..\References\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
@@ -64,8 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomapperMappings\EntityDtoMappings.cs" />
     <Compile Include="Daos\DaoBase.cs" />
+    <Compile Include="Daos\UserDao.cs" />
     <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="NHibernate\ConcurrencyException.cs" />
     <Compile Include="NHibernate\FlushEntityEventListener.cs" />
     <Compile Include="NHibernate\ISessionManager.cs" />
@@ -73,6 +80,9 @@
     <Compile Include="NHibernate\NHibernateSessionStorage.cs" />
     <Compile Include="NHibernate\SessionManager.cs" />
     <Compile Include="NHibernate\ValidateFieldsEventListener.cs" />
+    <Compile Include="NHMappings\UserMapping.cs" />
+    <Compile Include="NHMappings\ClassMapBase.cs" />
+    <Compile Include="NHMappings\ClassMapVersionBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +95,10 @@
       <Name>Dixiton.Dtos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
