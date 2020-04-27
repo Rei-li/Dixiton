@@ -24,7 +24,7 @@ namespace MyHome.Controllers
         }
 
         // POST api/values
-        public void Post(string value)
+        public void Post([FromBody]string value)
         {
             using (var connection = new SqlConnection("Server=tcp:batdata.database.windows.net,1433;Initial Catalog=batdata;Persist Security Info=False;User ID=nso;Password=Mortr8888;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
