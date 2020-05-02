@@ -13,9 +13,35 @@ namespace MyHome.Controllers
     public class SonarController : ApiController
     {
         // GET: api/Sonar
-        public IEnumerable<string> Get()
+        public IEnumerable<SonarData> Get()
         {
-            return new string[] { "value1", "value2" };
+            var dataList = new List<SonarData>();
+            using (var connection = new SqlConnection("Server=tcp:batdata.database.windows.net,1433;Initial Catalog=batdata;Persist Security Info=False;User ID=nso;Password=Mortr8888;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                string sql = "Select * from SonarData";
+                SqlCommand oCmd = new SqlCommand(sql, connection);
+
+                connection.Open();
+                using (SqlDataReader oReader = oCmd.ExecuteReader())
+                {
+                    while (oReader.Read())
+                    {
+                        var data = new SonarData();
+                        int distance;
+                        int angle;
+
+                        int.TryParse(oReader["Distance"].ToString(), out distance);
+                        int.TryParse(oReader["Angle"].ToString(), out angle);
+                        data.Distance = distance;
+                        data.Angle = angle;
+                        dataList.Add(data);
+                    }
+
+                    connection.Close();
+                }
+            }
+
+            return dataList;
         }
 
         // GET: api/Sonar/5
