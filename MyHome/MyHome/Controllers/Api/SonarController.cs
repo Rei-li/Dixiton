@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using System.Data.SqlClient;
 using MyHome.Models;
 
-namespace MyHome.Controllers
+namespace MyHome.Controllers.Api
 {
     public class SonarController : ApiController
     {

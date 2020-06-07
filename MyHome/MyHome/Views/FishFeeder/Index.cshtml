@@ -1,0 +1,6 @@
+﻿@using (Html.BeginForm("Feed", "FishFeeder", FormMethod.Post))
+{
+    <input type="submit" name="response" value="Feed" formaction=@Url.Action("Feed") formmethod="post" class="btn btn-primary" />
+    <input type="submit" name="response" value="LightSwitch" formaction=@Url.Action("LightSwitch") formmethod="post" class="btn btn-primary" />
+    <input type="submit" name="response" value="Reset" formaction=@Url.Action("Reset") formmethod="post" class="btn btn-default" />
+}

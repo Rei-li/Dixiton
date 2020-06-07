@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace MyHome.Controllers
+namespace MyHome.Controllers.Api
 {
     public class ValuesController : ApiController
     {
